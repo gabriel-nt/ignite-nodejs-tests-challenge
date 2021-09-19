@@ -29,6 +29,7 @@
 - [x] AuthenticateUserUseCase
 - [x] GetBalanceUseCase
 - [x] CreateStatementUseCase
+- [x] CreateTransferUseCase
 - [x] GetStatementOperationUseCase
 
 ### 🛢 Testes de Integração
@@ -37,6 +38,7 @@
 - [x] AuthenticateUserController
 - [x] GetBalanceController
 - [x] CreateStatementController
+- [x] CreateTransferController 
 - [x] GetStatementOperationController
 
 ### ⚙ Pré-requisitos
