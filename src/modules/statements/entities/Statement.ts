@@ -4,7 +4,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
@@ -13,6 +13,7 @@ import { User } from '../../users/entities/User';
 enum OperationType {
   DEPOSIT = 'deposit',
   WITHDRAW = 'withdraw',
+  TRANSFER = 'transfer',
 }
 
 @Entity('statements')
@@ -26,6 +27,13 @@ export class Statement {
   @ManyToOne(() => User, user => user.statement)
   @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @Column('uuid')
+  sender_id?: string;
+
+  @ManyToOne(() => User, user => user.statement)
+  @JoinColumn({ name: 'sender_id' })
+  sender: User;
 
   @Column()
   description: string;
